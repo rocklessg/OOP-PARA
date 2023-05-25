@@ -29,6 +29,8 @@ namespace Model
             MakeDeposite(initialBalance, DateTime.UtcNow, "Initial balance");
         }
 
+        public virtual void PerformMonthEndTransactions() { }
+
         private List<Transaction> allTransactions = new();
 
         public void MakeDeposite(decimal amount, DateTime date, string narration)
