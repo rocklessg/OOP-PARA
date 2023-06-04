@@ -23,41 +23,14 @@ namespace SolidPrinciple.SingleResponsibility
                 Password = $"{Name}{new Random().Next(1111, 9999)}"
             };
 
-            var sendEmail = SendMail("sender@email.com", user.Email, "Your account has been activated");
-            if (sendEmail == "Email sent")
+            var sendEmail = new EmailSend();
+            var result = sendEmail.SendMail("sender@email.com", user.Email, "Your account has been activated");
+            if (result == "Email sent")
             {
                 return "User added succesfully";
             }
 
             return "Operation failed";
-        }
-
-        public string SendMail(string sender, string reciever, string emailContent)
-        {
-            if (sender != null && reciever != null && emailContent != null)
-            {
-                var validateEmail = ValidateEmail(reciever);
-                if (!validateEmail)
-                {
-                    return "Invalid email";
-                }
-
-                return "Email sent";
-            }
-            return "Email sent not successful. Kindly try again later";
-        }
-
-        public bool ValidateEmail(string reciever)
-        {
-            if (!string.IsNullOrEmpty(reciever))
-            {
-                if (reciever.Contains("@"))
-                {
-                    return true;
-                }
-                return false;
-            }
-            return false;
         }
     }
 }
