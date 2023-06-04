@@ -2,6 +2,7 @@
 using Model;
 using SolidPrinciple;
 using SolidPrinciple.Liskov_LSP_;
+using SolidPrinciple.OpenClose;
 using SolidPrinciple.SingleResponsibility;
 
 //Console.WriteLine("Hello, World!");
@@ -27,6 +28,18 @@ using SolidPrinciple.SingleResponsibility;
 //fruit =  new Apple();   // These obeys LISKOV
 //Console.WriteLine($"Color of Apple is: {fruit.GetColor()}");
 
-User user = new();
-var displayResult = user.AddUser(1, "user@email.com");
+//User user = new();
+//var displayResult = user.AddUser(1, "user@email.com");
+//Console.WriteLine(displayResult);
+
+Account account = new();
+var displayResult = account.OpenAccount(1, new Account
+{
+    Name = "Test",
+    Balance = 200,
+    AccountType = AccountType.Savings
+});
 Console.WriteLine(displayResult);
+
+var accountOperation = account.AccountOperation(account.AccountType);
+Console.WriteLine(accountOperation);
