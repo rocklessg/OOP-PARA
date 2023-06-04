@@ -2,6 +2,7 @@
 using Model;
 using SolidPrinciple;
 using SolidPrinciple.Liskov_LSP_;
+using SolidPrinciple.SingleResponsibility;
 
 //Console.WriteLine("Hello, World!");
 
@@ -21,7 +22,11 @@ using SolidPrinciple.Liskov_LSP_;
 //Apple apple = new Orange();
 //Console.WriteLine(apple.GetColor()); // this returns Orange instead of Red color of the Apple(behaviour of apple change)
 
-IFruit fruit = new Orange();
-Console.WriteLine($"Color of Orange is: {fruit.GetColor()}");
-fruit =  new Apple();   // These obeys LISKOV
-Console.WriteLine($"Color of Apple is: {fruit.GetColor()}");
+//IFruit fruit = new Orange();
+//Console.WriteLine($"Color of Orange is: {fruit.GetColor()}");
+//fruit =  new Apple();   // These obeys LISKOV
+//Console.WriteLine($"Color of Apple is: {fruit.GetColor()}");
+
+User user = new();
+var displayResult = user.AddUser(1, "user@email.com");
+Console.WriteLine(displayResult);
