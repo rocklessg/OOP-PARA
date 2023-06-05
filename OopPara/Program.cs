@@ -32,14 +32,17 @@ using SolidPrinciple.SingleResponsibility;
 //var displayResult = user.AddUser(1, "user@email.com");
 //Console.WriteLine(displayResult);
 
-Account account = new();
-var displayResult = account.OpenAccount(1, new Account
+//OCP Correct
+Account account = new()
 {
+    Id = 1,
     Name = "Test",
     Balance = 200,
-    AccountType = AccountType.Savings
-});
+    AccountType = "Savings"
+};
+var displayResult = account.OpenAccount(1, account);
 Console.WriteLine(displayResult);
 
-var accountOperation = account.AccountOperation(account.AccountType);
+Savings savings = new ();
+var accountOperation = savings.AccountOperation(account.AccountType);
 Console.WriteLine(accountOperation);
