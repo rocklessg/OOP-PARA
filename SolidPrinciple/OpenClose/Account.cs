@@ -8,7 +8,7 @@ namespace SolidPrinciple.OpenClose
 {
     public class Account
     {
-        private int AccountNumberSeed = 1234567890;
+        private readonly int AccountNumberSeed = 1234567890;
 
         public int Id { get; set; }
         public string Name { get; set; }
