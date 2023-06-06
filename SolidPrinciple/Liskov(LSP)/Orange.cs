@@ -1,10 +1,7 @@
 ﻿namespace SolidPrinciple.Liskov_LSP_
 {
-    public class Orange : Apple
+    public class Orange : IFruit
     {
-        public override string GetColor()
-        {
-            return "Orange";
-        }
+        public string GetColor() => "Orange";
     }
 }
