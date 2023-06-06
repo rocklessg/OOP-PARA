@@ -9,10 +9,16 @@ namespace SolidPrinciple.SingleResponsibility
 {
     public class User
     {
+        private readonly EmailSend _emailSend;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public User()
+        {
+            _emailSend = new EmailSend();
+        }
         public string AddUser(int id, string email)
         {
             var user = new User
@@ -23,8 +29,8 @@ namespace SolidPrinciple.SingleResponsibility
                 Password = $"{Name}{new Random().Next(1111, 9999)}"
             };
 
-            var sendEmail = new EmailSend();
-            var result = sendEmail.SendMail("sender@email.com", user.Email, "Your account has been activated");
+            //var sendEmail = new EmailSend();
+            var result = _emailSend.SendMail("sender@email.com", user.Email, "Your account has been activated");
             if (result == "Email sent")
             {
                 return "User added succesfully";
