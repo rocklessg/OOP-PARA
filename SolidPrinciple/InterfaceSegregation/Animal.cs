@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidPrinciple.InterfaceSegregation
 {
-    public class Animal : ILivingthing
+    public class Animal : ILivingthing, IPlant
     {
         public void Feed()
         {
