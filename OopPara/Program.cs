@@ -47,8 +47,8 @@ using SolidPrinciple.SingleResponsibility;
 //var accountOperation = savings.AccountOperation(account.AccountType);
 //Console.WriteLine(accountOperation);
 
-Apple apple = new Orange();
-Console.WriteLine( apple.GetColor());
+IFruit fruit = new Orange();
+Console.WriteLine(fruit.GetColor());
 
-Apple apple2 = new Apple();
-Console.WriteLine( apple2.GetColor());
+fruit = new Apple();
+Console.WriteLine(fruit.GetColor());
