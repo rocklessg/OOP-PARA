@@ -1,10 +1,7 @@
 ﻿namespace SolidPrinciple.Liskov_LSP_
 {
-    public class Apple
+    public class Apple : IFruit
     {
-        public virtual string GetColor()
-        {
-            return "Red";
-        }
+        public string GetColor() => "Red";
     }
 }
