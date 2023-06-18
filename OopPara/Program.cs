@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Model;
 using SolidPrinciple;
-using SolidPrinciple.InterfaceSegregation;
 using SolidPrinciple.Liskov_LSP_;
 using SolidPrinciple.OpenClose;
 using SolidPrinciple.SingleResponsibility;
@@ -48,15 +47,8 @@ using SolidPrinciple.SingleResponsibility;
 //var accountOperation = savings.AccountOperation(account.AccountType);
 //Console.WriteLine(accountOperation);
 
-//IFruit fruit = new Orange();
-//Console.WriteLine(fruit.GetColor());
+IFruit fruit = new Orange();
+Console.WriteLine(fruit.GetColor());
 
-//fruit = new Apple();
-//Console.WriteLine(fruit.GetColor());
-
-ILivingthing animal = new Animal();
-IPlant animals = new Animal();
-IPlant plant = new Plant();
-Console.WriteLine(animal.GiveBirthToYoungerOnesAlive("Mammals"));
-animals.Feed();
-plant.Feed();
+fruit = new Apple();
+Console.WriteLine(fruit.GetColor());

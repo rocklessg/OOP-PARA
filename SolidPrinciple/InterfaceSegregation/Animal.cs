@@ -1,6 +1,6 @@
-﻿namespace SolidPrinciple.InterfaceSegregation
+namespace SolidPrinciple.InterfaceSegregation
 {
-    public class Animal : ILivingthing, IPlant
+    public class Animal : ILivingthing
     {
         public void Feed()
         {
