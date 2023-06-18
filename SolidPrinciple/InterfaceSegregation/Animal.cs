@@ -9,6 +9,7 @@
 
         public bool GiveBirthToYoungerOnesAlive(string type)
         {
+
             if (string.IsNullOrEmpty(type))
                 return false;
 
@@ -26,7 +27,6 @@
             {
                 return "Invalid request";
             }
-
             return nature == "Homonsapient" ? $"{nature} can speak" : $"{nature} can not speak";
         }
     }
