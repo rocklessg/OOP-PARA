@@ -1,4 +1,10 @@
-﻿namespace SolidPrinciple.InterfaceSegregation
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SolidPrinciple.InterfaceSegregation
 {
     public class Animal : ILivingthing
     {
@@ -12,7 +18,14 @@
             if (string.IsNullOrEmpty(type))
                 return false;
 
-            return type == "Mammals";
+            if (type == "Mammals")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public string Grow()
@@ -27,7 +40,11 @@
                 return "Invalid request";
             }
 
-            return nature == "Homonsapient" ? $"{nature} can speak" : $"{nature} can not speak";
+            if (nature == "Homonsapient")
+            {
+                return $"{nature} can speak";
+            }
+            return $"{nature} can not speak";
         }
     }
 }
