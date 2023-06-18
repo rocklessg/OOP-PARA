@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SolidPrinciple.InterfaceSegregation
+﻿namespace SolidPrinciple.InterfaceSegregation
 {
     public class Animal : ILivingthing, IPlant
     {
@@ -15,17 +9,11 @@ namespace SolidPrinciple.InterfaceSegregation
 
         public bool GiveBirthToYoungerOnesAlive(string type)
         {
+
             if (string.IsNullOrEmpty(type))
                 return false;
 
-            if (type == "Mammals")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return type == "Mammals";
         }
 
         public string Grow()
@@ -39,12 +27,7 @@ namespace SolidPrinciple.InterfaceSegregation
             {
                 return "Invalid request";
             }
-
-            if (nature == "Homonsapient")
-            {
-                return $"{nature} can speak";
-            }
-            return $"{nature} can not speak";
+            return nature == "Homonsapient" ? $"{nature} can speak" : $"{nature} can not speak";
         }
     }
 }
