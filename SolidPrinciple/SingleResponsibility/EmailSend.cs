@@ -25,15 +25,11 @@ namespace SolidPrinciple.SingleResponsibility
 
         public bool ValidateEmail(string reciever)
         {
-            if (!string.IsNullOrEmpty(reciever))
+            if (string.IsNullOrEmpty(reciever))
             {
-                if (reciever.Contains("@"))
-                {
-                    return true;
-                }
                 return false;
             }
-            return false;
+            return reciever.Contains("@");
         }
     }
 }
